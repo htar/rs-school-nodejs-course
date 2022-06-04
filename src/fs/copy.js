@@ -1,3 +1,28 @@
-export const copy = async () => {
-    // Write your code here 
+import { existsSync, mkdirSync, readdirSync, copyFileSync } from "node:fs";
+
+const basePath = "src/fs";
+const oldFolderPath = `${basePath}/files`;
+const copyPath = `${basePath}/files_copy`;
+
+const copyFile = () => {};
+
+export const copyDir = async () => {
+  if (existsSync(copyPath) || !existsSync(oldFolderPath)) {
+    console.error("FS operation failed");
+  } else {
+    try {
+      await mkdirSync(copyPath);
+      const fileList = await readdirSync(oldFolderPath);
+      fileList.forEach((fileName) => {
+        copyFileSync(`${oldFolderPath}/${fileName}`, `${copyPath}/${fileName}`);
+      });
+      console.log("folder with files was copied");
+    } catch (error) {
+      console.error("FS copy operation failed");
+    }
+  }
 };
+
+export default (() => {
+  copyDir();
+})();

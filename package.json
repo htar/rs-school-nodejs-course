@@ -9,6 +9,7 @@
   "type": "module",
   "scripts": {
     "create":"node ./src/fs/create",
+    "copy":"node ./src/fs/copy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
