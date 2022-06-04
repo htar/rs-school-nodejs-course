@@ -11,6 +11,7 @@
     "create":"node ./src/fs/create",
     "copy":"node ./src/fs/copy",
     "rename":"node ./src/fs/rename",
+    "remove":"node ./src/fs/delete",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

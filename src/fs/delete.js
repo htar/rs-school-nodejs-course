@@ -1,3 +1,16 @@
+import { unlinkSync } from "node:fs";
+const filePath = "src/fs/files/fileToRemove.txt";
+
 export const remove = async () => {
     // Write your code here 
+  try {
+    await unlinkSync(filePath);
+    console.log(`file ${filePath} was removed`);
+  } catch (e) {
+    console.error("FS operation failed");
+  }
 };
+
+export default (() => {
+  remove();
+})();
