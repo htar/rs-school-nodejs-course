@@ -4,8 +4,6 @@ const basePath = "src/fs";
 const oldFolderPath = `${basePath}/files`;
 const copyPath = `${basePath}/files_copy`;
 
-const copyFile = () => {};
-
 export const copyDir = async () => {
   if (existsSync(copyPath) || !existsSync(oldFolderPath)) {
     console.error("FS operation failed");
