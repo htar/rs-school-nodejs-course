@@ -16,7 +16,7 @@
     "read": "node ./src/fs/read",
     "calcHash": "node ./src/hash/calcHash",
     "cjsToEsm": "node ./src/modules/cjsToEsm.mjs",
-    "env": "RSS_USER_NAME='user name' RSS_USER_SURNAME='user surname' node ./src/cli/env set ",
+    "env": "RSS_USER_NAME='user name' RSS_USER_SURNAME='user surname' node ./src/cli/env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
