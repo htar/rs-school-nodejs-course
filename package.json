@@ -15,6 +15,7 @@
     "listFile": "node ./src/fs/list",
     "readFile": "node ./src/fs/read",
     "streamsRead": "node ./src/streams/read",
+    "streamsTransform": "node ./src/streams/transform",
     "streamsWrite": "node ./src/streams/write",
     "calcHash": "node ./src/hash/calcHash",
     "compressZip": "node ./src/zip/compress",

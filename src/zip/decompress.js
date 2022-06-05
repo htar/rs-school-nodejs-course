@@ -12,7 +12,7 @@ export const decompress = async () => {
   const out = createWriteStream(`${folderPath}/fileToCompress.txt`);
 
   stream.pipeline(inp, unzip, out, (error) => {
-    return error && console.log("compress stream error", error);
+    return error && console.log("decompress stream error", error);
   });
 };
 
