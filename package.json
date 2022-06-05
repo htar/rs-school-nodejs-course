@@ -14,16 +14,16 @@
     "removeFile": "node ./src/fs/delete",
     "listFile": "node ./src/fs/list",
     "readFile": "node ./src/fs/read",
-    "streamsRead": "node ./src/streams/read",
-    "streamsTransform": "node ./src/streams/transform",
-    "streamsWrite": "node ./src/streams/write",
+    "envFile": "RSS_USER_NAME='user name' RSS_USER_SURNAME='user surname' node ./src/cli/env",
+    "argvFile": " node  ./src/cli/args --propName='value1' --propName='value2'",
+    "cjsToEsm": "node ./src/modules/cjsToEsm.mjs",
     "calcHash": "node ./src/hash/calcHash",
+    "streamsRead": "node ./src/streams/read",
+    "streamsWrite": "node ./src/streams/write",
+    "streamsTransform": "node ./src/streams/transform",
     "compressZip": "node ./src/zip/compress",
     "decompressZip": "node ./src/zip/decompress",
-    "wtWorker": "node ./src/wt/worker",
-    "cjsToEsm": "node ./src/modules/cjsToEsm.mjs",
-    "envFile": "RSS_USER_NAME='user name' RSS_USER_SURNAME='user surname' node ./src/cli/env",
-    "argvFile": " node  ./src/cli/args --propName='value1' --propName='value2'"
+    "wtWorker": "node ./src/wt/worker"
   },
   "repository": {
     "type": "git",

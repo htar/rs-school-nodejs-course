@@ -20,7 +20,7 @@ export const rename = async () => {
       );
       console.log(`${oldFileName} was renamed to ${newFileName}`);
     } catch (error) {
-      console.error("FS rename operation failed");
+      throw 'FS operation failed';
     }
   }
 };

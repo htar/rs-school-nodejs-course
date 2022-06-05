@@ -13,7 +13,7 @@ export const sendResult = () => {
 
     parentPort.postMessage(res);
   } catch (error) {
-    console.error("wt worker error", error);
+    throw 'FS operation failed';
   }
 };
 

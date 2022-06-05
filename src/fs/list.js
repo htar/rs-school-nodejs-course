@@ -12,7 +12,7 @@ export const list = async () => {
       const fileList = await readdirSync(folderPath);
       console.log(`file list => ${fileList}`);
     } catch (error) {
-      console.error("FS operation failed");
+      throw 'FS operation failed';
     }
   }
 };

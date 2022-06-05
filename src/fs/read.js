@@ -9,7 +9,7 @@ export const read = async () => {
     const data = await readFileSync(filePath, { encoding: "utf8", flag: "r" });
     console.log(data);
   } catch (error) {
-    console.error("FS operation failed");
+    throw 'FS operation failed';
   }
 };
 

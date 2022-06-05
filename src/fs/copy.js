@@ -16,7 +16,7 @@ export const copyDir = async () => {
       });
       console.log("folder with files was copied");
     } catch (error) {
-      console.error("FS copy operation failed");
+      throw 'FS operation failed';
     }
   }
 };

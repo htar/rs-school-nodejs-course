@@ -7,7 +7,7 @@ export const remove = async () => {
     unlinkSync(filePath);
     console.log(`file ${filePath} was removed`);
   } catch (e) {
-    console.error("FS operation failed");
+    throw 'FS operation failed';
   }
 };
 
