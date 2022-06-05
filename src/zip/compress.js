@@ -8,7 +8,9 @@ export const compress = async () => {
   const folderPath = `${basePath}/files`;
 
   const gzip = zlib.createGzip();
-  const inp = createReadStream(`${folderPath}/fileToCompress.txt`);
+  const inp = createReadStream(`${folderPath}/fileToCompress.txt`, {
+    encoding: "utf8",
+  });
   const out = createWriteStream(`${folderPath}/archive.gz`);
 
   stream.pipeline(inp, gzip, out, (error) => {
