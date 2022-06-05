@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readdirSync, copyFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, copyFileSync } from "fs";
 
 const basePath = "src/fs";
 const folderPath = `${basePath}/files`;

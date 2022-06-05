@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import { readFileSync } from "node:fs";
+import { readFileSync } from "fs";
 
 export const calculateHash = async () => {
   // Write your code here

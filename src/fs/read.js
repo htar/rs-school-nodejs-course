@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync } from "fs";
 
 const filePath = "src/fs/files/fileToRead.txt";
 const fileContent = "I am fresh and young";

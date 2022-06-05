@@ -1,4 +1,4 @@
-import { existsSync, renameSync } from "node:fs";
+import { existsSync, renameSync } from "fs";
 
 const oldFileName = "wrongFilename.txt";
 const newFileName = "properFilename.md";
