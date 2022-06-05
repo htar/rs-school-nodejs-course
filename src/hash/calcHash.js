@@ -1,9 +1,13 @@
 import crypto from "crypto";
-const hash = crypto.getHashes();
+import { readFileSync } from "node:fs";
 
-export const calculateHash = () => {
+export const calculateHash = async () => {
   // Write your code here
-  const hex = crypto.createHash("sha256").digest("hex");
+  const file = await readFileSync(
+    "src/hash/files/fileToCalculateHashFor.txt",
+    "utf8"
+  );
+  const hex = crypto.createHash("sha256").update(file).digest("hex");
   console.log("hex", hex);
   return hex;
 };
