@@ -19,6 +19,7 @@
     "calcHash": "node ./src/hash/calcHash",
     "compressZip": "node ./src/zip/compress",
     "decompressZip": "node ./src/zip/decompress",
+    "wtWorker": "node ./src/wt/worker",
     "cjsToEsm": "node ./src/modules/cjsToEsm.mjs",
     "envFile": "RSS_USER_NAME='user name' RSS_USER_SURNAME='user surname' node ./src/cli/env",
     "argvFile": " node  ./src/cli/args --propName='value1' --propName='value2'"
