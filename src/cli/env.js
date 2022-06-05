@@ -2,9 +2,14 @@ const { env } = process;
 
 export const parseEnv = () => {
   // Write your code here
-  const envName = "RSS_USER_NAME";
-  const envSurname = "RSS_USER_SURNAME";
-  console.log(`${envName}=${env[envName]}; ${envSurname}=${env[envSurname]}`);
+  const list = Object.keys(env);
+  const result = list.reduce((acc, item) => {
+    if (item.includes("RSS_")) {
+      return `${acc} ${item}=${env[item]};`;
+    }
+    return acc;
+  }, "");
+  console.log(result);
 };
 
 export default (() => {
