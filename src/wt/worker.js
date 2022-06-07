@@ -5,18 +5,13 @@ export const nthFibonacci = (n) => {
   return n < 2 ? n : nthFibonacci(n - 1) + nthFibonacci(n - 2);
 };
 
-export const sendResult = () => {
+export const sendResult = (data) => {
   // This function sends result of nthFibonacci computations to main thread
 
-  try {
-    const res = nthFibonacci(workerData);
+	const result = nthFibonacci(data);
 
-    parentPort.postMessage(res);
-  } catch (error) {
-    throw 'FS operation failed';
-  }
+	return result;
 };
 
-export default (() => {
-    sendResult();
-})();
+parentPort.postMessage(sendResult(workerData));
+
