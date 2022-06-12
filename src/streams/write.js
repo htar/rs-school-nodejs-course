@@ -11,7 +11,6 @@ export const write = async () => {
   });
 
   stdin.pipe(stream);
-  stream.write("hello, ");
   stream.end("world!");
 };
 
