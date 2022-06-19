@@ -6,6 +6,7 @@
   "scripts": {
     "start:dev": "nodemon -w src/index.js",
     "start:prod": "node disc/index.js",
+    "start:multi": "node src/load-balancer.js",
     "lint": "eslint . --fix",
     "test": "jest"
   },
