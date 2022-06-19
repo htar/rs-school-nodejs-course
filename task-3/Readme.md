@@ -1,3 +1,14 @@
+# Run project
+What need to do before start testing
+- go to folder task-3 - for example run `cd task-3`
+- install npm packages run `npm install` or `yarn` 
+- rename `.env.example` to `.env`
+- run project `npm run start:dev` or `yarn start:dev`
+when project will be started you can to sent request by Postman or Curl to `http://localhost:8080/api/users` or other urls or ports
+-
+
+
+
 # [Assignment: CRUD API](https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/crud-api/score.md)
 
 ## Description

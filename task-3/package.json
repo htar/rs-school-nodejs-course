@@ -4,7 +4,7 @@
   "description": "https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/crud-api/assignment.md",
   "main": "src/index.js",
   "scripts": {
-    "start:dev": "nodemon -w src src/index.js",
+    "start:dev": "nodemon -w src/index.js",
     "start:prod": "node disc/index.js",
     "lint": "eslint . --fix",
     "test": "jest"
