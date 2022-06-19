@@ -3,6 +3,7 @@ import {
   getIdFromURL,
   validateUserData,
   getReqBody,
+  isUUID,
 } from "../helpers/index.js";
 import { responseWithHeaders } from "../helpers/middleware.js";
 import Users from "../model/Users.js";
@@ -18,6 +19,10 @@ export async function getUsers(req, res) {
 }
 export async function getUser(req, res) {
   const id = getIdFromURL(req.url);
+  const isValidId = isUUID(id);
+  if (!isValidId) {
+    responseWithHeaders(400, messages[400], res);
+  }
 
   try {
     const user = await UsersList.getUser(id);
@@ -28,6 +33,10 @@ export async function getUser(req, res) {
 }
 export async function createUser(req, res) {
   const bodyData = await getReqBody(req);
+  if (!bodyData.username || !bodyData.age || !bodyData.hobbies){
+    return responseWithHeaders(400, { message: messages[417] }, res);
+  }
+  
   const userData = validateUserData(bodyData);
 
   try {
@@ -39,6 +48,11 @@ export async function createUser(req, res) {
 }
 export async function updateUser(req, res) {
   const id = getIdFromURL(req.url);
+  const isValidId = isUUID(id);
+  if (!isValidId) {
+    responseWithHeaders(400, messages[400], res);
+  }
+
   const bodyData = await getReqBody(req);
 
   const userData = validateUserData(bodyData);
@@ -52,6 +66,10 @@ export async function updateUser(req, res) {
 }
 export async function deleteUser(req, res) {
   const id = getIdFromURL(req.url);
+  const isValidId = isUUID(id);
+  if (!isValidId) {
+    responseWithHeaders(400, messages[400], res);
+  }
 
   try {
     const user = await UsersList.getUser(id);

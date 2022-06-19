@@ -1,13 +1,20 @@
+import { validate } from "uuid";
+
 export const getIdFromURL = (url) => {
-  const option = url.split("/")
-  return option[option.length - 1]
+  const option = url.split("/");
+  return option[option.length - 1];
 };
+
+export const isUUID = (id) => {
+  return validate(id);
+};
+
 export const validateUserData = (user) => {
   const data = Object.assign(
     { id: null, username: null, age: null, hobbies: [] },
     user
   );
-  
+
   const { id, username, age, hobbies } = data;
 
   return {
