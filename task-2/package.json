@@ -1,0 +1,24 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/file-manager/assignment.md",
+  "main": "index.js",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htar/rs-school-nodejs-file-manager.git"
+  },
+  "author": "Taras Khmelovskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/htar/rs-school-nodejs-file-manager/issues"
+  },
+  "homepage": "https://github.com/htar/rs-school-nodejs-file-manager#readme"
+}
