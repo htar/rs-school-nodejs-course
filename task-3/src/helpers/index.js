@@ -1,14 +1,37 @@
-export const getIdFromURL = (url) => url.split("/")[2];
+export const getIdFromURL = (url) => {
+  const option = url.split("/")
+  return option[option.length - 1]
+};
 export const validateUserData = (user) => {
+  const data = Object.assign(
+    { id: null, username: null, age: null, hobbies: [] },
+    user
+  );
+  
   const { id, username, age, hobbies } = data;
 
   return {
-    id: user.id || null,
-    username: user.username || null,
-    age: user.age || null,
-    hobbies: user.hobbies || null,
-    hobbies: user.hobbies || [],
+    id,
+    username,
+    age,
+    hobbies,
   };
 };
+
+export const getReqBody = (req) =>
+  new Promise((resolve, reject) => {
+    try {
+      let body = "";
+      req.on("data", (chunk) => {
+        body += chunk.toString();
+      });
+      req.on("end", () => {
+        resolve(JSON.parse(body));
+      });
+    } catch (err) {
+      reject(err);
+    }
+  });
+
 export * from "./messages.js";
 export * from "./middleware.js";

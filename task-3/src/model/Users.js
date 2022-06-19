@@ -10,7 +10,7 @@ export default class Users {
 
   async getUser(id) {
     return new Promise((resolve, reject) => {
-      let user = this.usersLists.find((user) => user.id === parseInt(id));
+      let user = this.usersLists.find((user) => user.id === id);
       if (user) {
         resolve(user);
       } else {
@@ -20,30 +20,33 @@ export default class Users {
   }
   async createUser(user) {
     return new Promise((resolve, _) => {
-      const newUser = { id: uuidv4(), ...user };
+      const newUser = { ...user, id: uuidv4() };
 
       this.usersLists.push(newUser);
       resolve(newUser);
     });
   }
 
-  async updateUser(newUser) {
+  async updateUser(id, newUser) {
     return new Promise((resolve, reject) => {
-      let userIndex = this.usersLists.findIndex((user) => user.id === newUser.id);
+      let userIndex = this.usersLists.findIndex((user) => user.id === id);
 
-      if (!userIndex) {
+      if (!userIndex && userIndex !== 0) {
         reject(messages[404]);
       }
-      const updatedUser = { ...this.usersLists[userIndex], ...newUser };
+      const updatedUser = { ...this.usersLists[userIndex], ...newUser, id };
 
       this.usersLists.splice(userIndex, 1, updatedUser);
-      resolve(user);
+      resolve(updatedUser);
     });
   }
 
   async deleteUser(id) {
     return new Promise((resolve, reject) => {
-      let userIndex = this.usersLists.findIndex((user) => user.id === parseInt(id));
+      let userIndex = this.usersLists.findIndex((user) => user.id === id);
+      if (!userIndex && userIndex !== 0) {
+        reject(messages[404]);
+      }
       this.usersLists.splice(userIndex, 1);
       if (!userIndex) {
         reject(messages[404]);

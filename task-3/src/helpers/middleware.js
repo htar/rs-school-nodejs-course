@@ -1,5 +1,5 @@
 export function responseWithHeaders(statusCode, content, response) {
-  response.writeHead(status, {
+  response.writeHead(statusCode, {
     "Content-Type": "application/json",
   });
   response.end(JSON.stringify(content));

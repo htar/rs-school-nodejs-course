@@ -9,7 +9,7 @@ import {
 } from "../controllers/index.js";
 
 export function userRouter(request, response) {
-  if (!req.url) {
+  if (!request.url) {
     return responseWithHeaders(404, { message: messages[404] }, response);
   }
   switch (request.method) {
